@@ -1,0 +1,11 @@
+C:\Users\Maksim\source\repos\WPFEvents\PlayFieldTest\bin\Debug\netcoreapp2.1\PlayFieldTest.deps.json
+C:\Users\Maksim\source\repos\WPFEvents\PlayFieldTest\bin\Debug\netcoreapp2.1\PlayFieldTest.runtimeconfig.json
+C:\Users\Maksim\source\repos\WPFEvents\PlayFieldTest\bin\Debug\netcoreapp2.1\PlayFieldTest.runtimeconfig.dev.json
+C:\Users\Maksim\source\repos\WPFEvents\PlayFieldTest\bin\Debug\netcoreapp2.1\PlayFieldTest.dll
+C:\Users\Maksim\source\repos\WPFEvents\PlayFieldTest\bin\Debug\netcoreapp2.1\PlayFieldTest.pdb
+C:\Users\Maksim\source\repos\WPFEvents\PlayFieldTest\obj\Debug\netcoreapp2.1\PlayFieldTest.csprojAssemblyReference.cache
+C:\Users\Maksim\source\repos\WPFEvents\PlayFieldTest\obj\Debug\netcoreapp2.1\PlayFieldTest.csproj.CoreCompileInputs.cache
+C:\Users\Maksim\source\repos\WPFEvents\PlayFieldTest\obj\Debug\netcoreapp2.1\PlayFieldTest.AssemblyInfoInputs.cache
+C:\Users\Maksim\source\repos\WPFEvents\PlayFieldTest\obj\Debug\netcoreapp2.1\PlayFieldTest.AssemblyInfo.cs
+C:\Users\Maksim\source\repos\WPFEvents\PlayFieldTest\obj\Debug\netcoreapp2.1\PlayFieldTest.dll
+C:\Users\Maksim\source\repos\WPFEvents\PlayFieldTest\obj\Debug\netcoreapp2.1\PlayFieldTest.pdb
