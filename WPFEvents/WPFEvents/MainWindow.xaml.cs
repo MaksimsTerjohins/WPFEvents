@@ -100,59 +100,61 @@ namespace WPFEvents
             ievads.Trim();
             string ievads2 = ievads.Remove(10, 3);
             char[] koordinatas = ievads2.ToCharArray(5, ievads2.Length - 5);
-            for (int i = 0; i < koordinatas.Length-1; i ++)
+            for (int i = 0; i < koordinatas.Length - 1; i++)
             {
                 if (!Char.IsNumber(koordinatas[i]))
                 {
                     char temp = SwitchChar(koordinatas[i]);
                     koordinatas[i] = temp;
                 }
-                
+
             }
             textBlockOutput.Text = new string(koordinatas);
 
-            int[] sienas = new int[(koordinatas.Length - 6)/3];
-            for (int i = 6; i < koordinatas.Length; i+=3)
+            int[] sienas = new int[(koordinatas.Length - 6) / 3];
+            for (int i = 6; i < koordinatas.Length; i += 3)
             {
-                sienas[(i - 6)/3] = Convert.ToInt32(Char.GetNumericValue(koordinatas[i]))*10 + Convert.ToInt32(Char.GetNumericValue(koordinatas[i+1]));
+                sienas[(i - 6) / 3] = Convert.ToInt32(Char.GetNumericValue(koordinatas[i])) * 10 + Convert.ToInt32(Char.GetNumericValue(koordinatas[i + 1]));
             }
             Array.Sort(sienas);
 
             int sienuSkaititajs = 0;
             for (var x = 0; x < platums; x++)
-            for (var y = 0; y < augstums; y++)
-            {
-                
-                bool siena = false;
-                
-
-                if (sienuSkaititajs < sienas.Length && x +1 == Math.Floor((double) (sienas[sienuSkaititajs]/10)) && (y+1  == sienas[sienuSkaititajs]- Math.Floor((double)(sienas[sienuSkaititajs] / 10)*10)))
+                for (var y = 0; y < augstums; y++)
                 {
-                    siena = true;
-                    sienuSkaititajs ++;
+
+                    bool siena = false;
+
+
+                    if (sienuSkaititajs < sienas.Length &&
+                        x + 1 == Math.Floor((double)(sienas[sienuSkaititajs] / 10)) &&
+                        (y + 1 == sienas[sienuSkaititajs] - Math.Floor((double)(sienas[sienuSkaititajs] / 10) * 10)))
+                    {
+                        siena = true;
+                        sienuSkaititajs++;
+                    }
+
+                    grid[x, y] = new Labirints
+                    {
+                        Siena = siena,
+                        Platums = x,
+                        Augstums = y
+                    };
+
                 }
 
-                grid[x, y] = new Labirints
-                {
-                    Siena = siena,
-                    Platums = x,
-                    Augstums = y
-                };
-                
-            }
+            var x1 = Char.GetNumericValue(koordinatas[0]) - 1;
+            var y1 = Char.GetNumericValue(koordinatas[1]) - 1;
+            var x2 = Char.GetNumericValue(koordinatas[3]) - 1;
+            var y2 = Char.GetNumericValue(koordinatas[4]) - 1;
 
-            var x1 = Char.GetNumericValue(koordinatas[0])-1;
-            var y1 = Char.GetNumericValue(koordinatas[1])-1;
-            var x2 = Char.GetNumericValue(koordinatas[3])-1;
-            var y2 = Char.GetNumericValue(koordinatas[4])-1;
-            
             var aStar = new MySolver<Labirints, object>(grid);
             var path = aStar.Search(new Point(x1, y1), new Point(x2, y2), null);
             aStar.Search(new Point(x1, y1), new Point(x2, y2), null);
 
             if (path != null)
                 foreach (var node in path)
-                    textBlockOutput.Text = textBlockOutput.Text + "\t(" + (node.Platums+1) + " " + (node.Augstums+1) + ")";
+                    textBlockOutput.Text = textBlockOutput.Text + "\t(" + (node.Platums + 1) + " " + (node.Augstums + 1) + ")";
             else
                 textBlockOutput.Text = "Ceļa nav";
         }
@@ -205,35 +207,35 @@ namespace WPFEvents
             switch (input)
             {
                 case 'A':
-                {
-                    return '1';
-                }
+                    {
+                        return '1';
+                    }
                 case 'B':
-                {
-                    return '2';
-                }
+                    {
+                        return '2';
+                    }
                 case 'C':
-                {
-                    return '3';
-                }
+                    {
+                        return '3';
+                    }
                 case 'D':
-                {
-                    return '4';
-                }
+                    {
+                        return '4';
+                    }
                 case '/':
                 case ',':
                 case '_':
                 case 'u':
                 case '.':
-                {
-                    return ' ';
-                }
+                    {
+                        return ' ';
+                    }
                 default:
-                {
-                    return ' ';
-                }
+                    {
+                        return ' ';
+                    }
 
             }
         }
-}
+    }
 }

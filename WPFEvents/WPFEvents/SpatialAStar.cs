@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace WPFEvents
@@ -119,8 +116,8 @@ namespace WPFEvents
         /// </summary>
         public LinkedList<TPathNode> Search(Point inStartNode, Point inEndNode, TUserContext inUserContext)
         {
-            PathNode startNode = m_SearchSpace[(int) inStartNode.X, (int) inStartNode.Y];
-            PathNode endNode = m_SearchSpace[(int) inEndNode.X, (int) inEndNode.Y];
+            PathNode startNode = m_SearchSpace[(int)inStartNode.X, (int)inStartNode.Y];
+            PathNode endNode = m_SearchSpace[(int)inEndNode.X, (int)inEndNode.Y];
 
             //System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
             //watch.Start();

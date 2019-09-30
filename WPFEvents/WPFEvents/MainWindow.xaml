@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:WPFEvents"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
-    Width="393"
+    Width="489.826"
     Height="443"
     mc:Ignorable="d">
     <Grid>
@@ -44,7 +44,7 @@
             SelectionChanged="ComboBox_SelectionChanged" />
         <TextBlock
             x:Name="textBlockOutput"
-            Width="160"
+            Width="231"
             Height="147"
             Margin="216,112,0,0"
             HorizontalAlignment="Left"
