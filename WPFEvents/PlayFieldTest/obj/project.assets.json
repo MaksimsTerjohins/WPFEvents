@@ -688,20 +688,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\svies\\.nuget\\packages\\": {}
+    "C:\\Users\\Maksim\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\svies\\source\\repos\\Cirvis\\WPFEvents\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj",
+      "projectUniqueName": "C:\\Users\\Maksim\\source\\repos\\WPFEvents2\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj",
       "projectName": "PlayFieldTest",
-      "projectPath": "C:\\Users\\svies\\source\\repos\\Cirvis\\WPFEvents\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj",
-      "packagesPath": "C:\\Users\\svies\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\svies\\source\\repos\\Cirvis\\WPFEvents\\WPFEvents\\PlayFieldTest\\obj\\",
+      "projectPath": "C:\\Users\\Maksim\\source\\repos\\WPFEvents2\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj",
+      "packagesPath": "C:\\Users\\Maksim\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Maksim\\source\\repos\\WPFEvents2\\WPFEvents\\PlayFieldTest\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\svies\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Maksim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"

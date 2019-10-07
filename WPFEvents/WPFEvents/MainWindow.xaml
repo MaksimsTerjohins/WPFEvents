@@ -76,6 +76,7 @@
             SelectionChanged="DataGrid_SelectionChanged">
             <DataGrid.Columns />
         </DataGrid>
+        <Button x:Name="buttonBrowse" Content="Browse" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" Click="btnOpenFile_Click"/>
 
     </Grid>
 

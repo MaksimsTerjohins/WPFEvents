@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.IO.Ports;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Microsoft.Win32;
 
 namespace WPFEvents
 {
@@ -57,7 +60,6 @@ namespace WPFEvents
         private void disconnectFromArduino()
         {
             isConnected = false;
-            port.WriteLine("4"); //STOP visiem motoriem
             port.Close();
             buttonConnect.Content = "Connect";
         }
@@ -78,7 +80,7 @@ namespace WPFEvents
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                textBlockOutput.Text = (e.ToString());
                 throw;
             }
 
@@ -87,11 +89,6 @@ namespace WPFEvents
 
         private void ButtonSendData_Click(object sender, RoutedEventArgs e)
         {
-            if (isConnected)
-            {
-                var inputText = inputTextFileContent.Text; //nolasam no TextBoxa datus
-                sendCommand(inputText); //metode , kas apstrādā datus un sūta uz Arduino
-            }
 
             var platums = 4;
             var augstums = 6;
@@ -152,9 +149,21 @@ namespace WPFEvents
             var path = aStar.Search(new Point(x1, y1), new Point(x2, y2), null);
             aStar.Search(new Point(x1, y1), new Point(x2, y2), null);
 
+            string points = "";
+
             if (path != null)
+            {
                 foreach (var node in path)
-                    textBlockOutput.Text = textBlockOutput.Text + "\t(" + (node.Platums + 1) + " " + (node.Augstums + 1) + ")";
+                {
+                    textBlockOutput.Text = textBlockOutput.Text + "\t(" + (node.Platums + 1) + " " +
+                                           (node.Augstums + 1) + ")";
+                    points += node.Platums+1;
+                    points += node.Augstums+1;
+                }
+
+                port.WriteLine(points);
+                textBlockOutput.Text += " " + points;
+            }
             else
                 textBlockOutput.Text = "Ceļa nav";
         }
@@ -172,10 +181,9 @@ namespace WPFEvents
 
             foreach (var c in commandChars)
             {
-                textBlockOutput.Text +=
-                    " " + c; //izvadām uz Output textBox rezultātu (tikai lai ērti redzēt kas notiek)
-                port.WriteLine(c.ToString()); //sūtam uz arduino komandas pa vienai
-                await Task.Delay(2000); // ar 2 sek pauzi
+                textBlockOutput.Text += " " + c; //izvadām uz Output textBox rezultātu (tikai lai ērti redzēt kas notiek)
+                //port.WriteLine(c.ToString()); //sūtam uz arduino komandas pa vienai
+               // await Task.Delay(2000); // ar 2 sek pauzi
             }
         }
 
@@ -237,5 +245,21 @@ namespace WPFEvents
 
             }
         }
+
+        private void btnOpenFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog OFD = new OpenFileDialog();
+            OFD.DefaultExt = ".txt";
+            OFD.Filter = "Text Files (*.txt)|*.txt";
+
+            if (OFD.ShowDialog() == true)
+            {
+                string dataFromTextFile = File.ReadAllText(OFD.FileName);
+                inputTextFileContent.Text = dataFromTextFile;
+            }
+
+           
+        }
     }
+    
 }
