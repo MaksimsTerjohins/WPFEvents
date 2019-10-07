@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using Microsoft.Win32;
 
 namespace WPFEvents
@@ -18,11 +19,15 @@ namespace WPFEvents
         private bool isConnected;
         private string[] ports;
         private SerialPort port;
+        
 
         public MainWindow()
         {
             InitializeComponent();
             getAvailableComPorts();
+
+
+            
 
             foreach (var port in ports)
             {
@@ -38,10 +43,7 @@ namespace WPFEvents
             if (inputTextFileContent.Text == "") inputTextFileContent.Text = "Input your data";
         }
 
-        private void InputTextFileContent_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (inputTextFileContent.Text == "Input your data") inputTextFileContent.Text = null;
-        }
+        
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -95,7 +97,7 @@ namespace WPFEvents
             var grid = new Labirints[platums, augstums];
             string ievads = inputTextFileContent.Text;
             ievads.Trim();
-            string ievads2 = ievads.Remove(10, 3);
+            string ievads2 = ievads.Remove(10, 5);
             char[] koordinatas = ievads2.ToCharArray(5, ievads2.Length - 5);
             for (int i = 0; i < koordinatas.Length - 1; i++)
             {
@@ -157,39 +159,22 @@ namespace WPFEvents
                 {
                     textBlockOutput.Text = textBlockOutput.Text + "\t(" + (node.Platums + 1) + " " +
                                            (node.Augstums + 1) + ")";
+                    
                     points += node.Platums+1;
                     points += node.Augstums+1;
                 }
 
-                port.WriteLine(points);
+                //port.WriteLine(points);
                 textBlockOutput.Text += " " + points;
             }
             else
                 textBlockOutput.Text = "Ceļa nav";
+            mapColour(x1+1,y1+1,x2+1,y2+1,points);
         }
 
-        private async void sendCommand(string inputText)
-        {
-            var cArray = new char[inputText.Length];
-            for (var i = 0; i < inputText.Length; i++)
-                cArray[i] = inputText[i]; //ielikam visas komandas char tipa massīvā
-            var commandChars = new List<char>(); //jauns massivs (List) ar atsēvišķiem chariem 
-            for (var i = 0; i < inputText.Length; i++)
-                if (cArray[i] == '1' || cArray[i] == '2' || cArray[i] == '3' || cArray[i] == '4' || cArray[i] == '5')
-                    // ^ filtrējam, ja lietotājs ievadīs nepareizus datus
-                    commandChars.Add(cArray[i]);
+       
 
-            foreach (var c in commandChars)
-            {
-                textBlockOutput.Text += " " + c; //izvadām uz Output textBox rezultātu (tikai lai ērti redzēt kas notiek)
-                //port.WriteLine(c.ToString()); //sūtam uz arduino komandas pa vienai
-               // await Task.Delay(2000); // ar 2 sek pauzi
-            }
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        }
+       
 
         public class MySolver<TPathNode, TUserContext> : SpatialAStar<TPathNode, TUserContext>
             where TPathNode : IPathNode<TUserContext>
@@ -259,6 +244,22 @@ namespace WPFEvents
             }
 
            
+        }
+
+        private void mapColour(double x1, double y1, double x2, double y2, string points)
+        {
+            if (x1 ==1 && y1 ==1)
+            {
+                txt11.Background = Brushes.LawnGreen;
+            }
+            else if (x2 == 1 && y2 == 1)
+            {
+                txt11.Background = Brushes.Green;
+            }
+            else
+            {
+                
+            }
         }
     }
     
