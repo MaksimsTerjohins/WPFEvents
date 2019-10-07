@@ -19,7 +19,7 @@ namespace WPFEvents
         private bool isConnected;
         private string[] ports;
         private SerialPort port;
-        
+
 
         public MainWindow()
         {
@@ -27,7 +27,7 @@ namespace WPFEvents
             getAvailableComPorts();
 
 
-            
+
 
             foreach (var port in ports)
             {
@@ -43,7 +43,7 @@ namespace WPFEvents
             if (inputTextFileContent.Text == "") inputTextFileContent.Text = "Input your data";
         }
 
-        
+
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -108,39 +108,42 @@ namespace WPFEvents
                 }
 
             }
+
             textBlockOutput.Text = new string(koordinatas);
 
             int[] sienas = new int[(koordinatas.Length - 6) / 3];
             for (int i = 6; i < koordinatas.Length; i += 3)
             {
-                sienas[(i - 6) / 3] = Convert.ToInt32(Char.GetNumericValue(koordinatas[i])) * 10 + Convert.ToInt32(Char.GetNumericValue(koordinatas[i + 1]));
+                sienas[(i - 6) / 3] = Convert.ToInt32(Char.GetNumericValue(koordinatas[i])) * 10 +
+                                      Convert.ToInt32(Char.GetNumericValue(koordinatas[i + 1]));
             }
+
             Array.Sort(sienas);
 
             int sienuSkaititajs = 0;
             for (var x = 0; x < platums; x++)
-                for (var y = 0; y < augstums; y++)
+            for (var y = 0; y < augstums; y++)
+            {
+
+                bool siena = false;
+
+
+                if (sienuSkaititajs < sienas.Length &&
+                    x + 1 == Math.Floor((double) (sienas[sienuSkaititajs] / 10)) &&
+                    (y + 1 == sienas[sienuSkaititajs] - Math.Floor((double) (sienas[sienuSkaititajs] / 10) * 10)))
                 {
-
-                    bool siena = false;
-
-
-                    if (sienuSkaititajs < sienas.Length &&
-                        x + 1 == Math.Floor((double)(sienas[sienuSkaititajs] / 10)) &&
-                        (y + 1 == sienas[sienuSkaititajs] - Math.Floor((double)(sienas[sienuSkaititajs] / 10) * 10)))
-                    {
-                        siena = true;
-                        sienuSkaititajs++;
-                    }
-
-                    grid[x, y] = new Labirints
-                    {
-                        Siena = siena,
-                        Platums = x,
-                        Augstums = y
-                    };
-
+                    siena = true;
+                    sienuSkaititajs++;
                 }
+
+                grid[x, y] = new Labirints
+                {
+                    Siena = siena,
+                    Platums = x,
+                    Augstums = y
+                };
+
+            }
 
             var x1 = Char.GetNumericValue(koordinatas[0]) - 1;
             var y1 = Char.GetNumericValue(koordinatas[1]) - 1;
@@ -159,9 +162,9 @@ namespace WPFEvents
                 {
                     textBlockOutput.Text = textBlockOutput.Text + "\t(" + (node.Platums + 1) + " " +
                                            (node.Augstums + 1) + ")";
-                    
-                    points += node.Platums+1;
-                    points += node.Augstums+1;
+
+                    points += node.Platums + 1;
+                    points += node.Augstums + 1;
                 }
 
                 //port.WriteLine(points);
@@ -169,12 +172,44 @@ namespace WPFEvents
             }
             else
                 textBlockOutput.Text = "Ceļa nav";
-            mapColour(x1+1,y1+1,x2+1,y2+1,points);
+
+
+
+
+
+
+
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt11);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt12);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt13);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt14);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt15);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt16);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt21);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt22);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt23);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt24);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt25);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt26);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt31);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt32);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt33);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt34);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt35);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt36);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt41);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt42);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt43);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt44);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt45);
+            mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, txt46);
+            
+
         }
 
-       
 
-       
+
+
 
         public class MySolver<TPathNode, TUserContext> : SpatialAStar<TPathNode, TUserContext>
             where TPathNode : IPathNode<TUserContext>
@@ -200,33 +235,33 @@ namespace WPFEvents
             switch (input)
             {
                 case 'A':
-                    {
-                        return '1';
-                    }
+                {
+                    return '1';
+                }
                 case 'B':
-                    {
-                        return '2';
-                    }
+                {
+                    return '2';
+                }
                 case 'C':
-                    {
-                        return '3';
-                    }
+                {
+                    return '3';
+                }
                 case 'D':
-                    {
-                        return '4';
-                    }
+                {
+                    return '4';
+                }
                 case '/':
                 case ',':
                 case '_':
                 case 'u':
                 case '.':
-                    {
-                        return ' ';
-                    }
+                {
+                    return ' ';
+                }
                 default:
-                    {
-                        return ' ';
-                    }
+                {
+                    return ' ';
+                }
 
             }
         }
@@ -243,24 +278,42 @@ namespace WPFEvents
                 inputTextFileContent.Text = dataFromTextFile;
             }
 
-           
+
         }
 
-        private void mapColour(double x1, double y1, double x2, double y2, string points)
+        private void mapColour(double x1, double y1, double x2, double y2, int[] sienas, string points, TextBlock txt)
         {
-            if (x1 ==1 && y1 ==1)
+            string name = txt.Name;
+            double xPrim = Convert.ToInt32(Char.GetNumericValue(name[3]));
+            double yPrim = Convert.ToInt32(Char.GetNumericValue(name[4]));
+            if (x1 == xPrim && y1 == yPrim)
             {
-                txt11.Background = Brushes.LawnGreen;
+                txt.Background = Brushes.LawnGreen;
+                txt.Text = $"ST";
             }
-            else if (x2 == 1 && y2 == 1)
+            else if (x2 == xPrim && y2 == yPrim)
             {
-                txt11.Background = Brushes.Green;
+                txt.Background = Brushes.Green;
+                txt.Text = $"FN";
             }
             else
             {
-                
+                for (int i = 0; i < sienas.Length; i ++)
+                {
+                    if (Math.Floor((double)(sienas[i] / 10)) == xPrim && sienas[i] - Math.Floor((double)(sienas[i] / 10) * 10) == yPrim)
+                    {
+                        txt.Background = Brushes.Black;
+                    }
+                }
+                for (int i = 0; i < points.Length; i += 2)
+                {
+                    if (Convert.ToInt32(Char.GetNumericValue(points[i])) == xPrim && Convert.ToInt32(Char.GetNumericValue(points[i+1])) == yPrim)
+                    {
+                        txt.Background = Brushes.Red;
+                    }
+                }
             }
         }
+
     }
-    
 }
