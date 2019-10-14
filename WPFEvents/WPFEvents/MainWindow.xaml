@@ -9,58 +9,64 @@
     Width="498"
     Height="450"
     mc:Ignorable="d" ResizeMode="NoResize">
-    <Grid Margin="0,10,3.2,-0.4">
+    <Grid x:Name="mainGrid" Margin="0,10,3.2,-0.4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="443*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
         <Button
-            x:Name="buttonSendData"
-            Width="76"
-            Margin="11,139,0,0"
+            x:Name="calcPath"
+            Width="100"
+            Margin="8.8,139,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="ButtonSendData_Click"
-            Content="Send Data" Height="22" />
+            Click="calcPath_Click"
+            Content="Calculate Path" Height="22" Grid.ColumnSpan="2" Grid.Column="1" />
         <TextBox
             x:Name="inputTextFileContent"
-            Margin="12,10,0,0"
+            Margin="9.8,10,0,0"
             HorizontalAlignment="Left"
             LostFocus="InputTextFileContent_LostFocus"
             Text="Input your data"
-            TextWrapping="Wrap" IsInactiveSelectionHighlightEnabled="True" IsManipulationEnabled="True" IsReadOnlyCaretVisible="True" IsReadOnly="True" Width="201" Height="101" VerticalAlignment="Top" />
+            TextWrapping="Wrap" IsInactiveSelectionHighlightEnabled="True" IsManipulationEnabled="True" IsReadOnlyCaretVisible="True" IsReadOnly="True" Width="201" Height="101" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" />
         <Label
             x:Name="labelDone"
-            Margin="10,139,0,0"
+            Margin="7.8,139,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="" />
+            Content="" Grid.Column="1" />
         <ComboBox
             x:Name="comboBox"
-            Margin="228,10,0,0"
-            SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" Width="133" Height="22" VerticalAlignment="Top" />
+            Margin="210,10,0,0"
+            SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" Width="133" Height="22" VerticalAlignment="Top" Grid.Column="2" />
         <TextBlock
             x:Name="textBlockOutput"
             Height="200"
-            Margin="277,170,0,0"
+            Margin="259,170,0,0"
             VerticalAlignment="Top"
-            TextWrapping="Wrap" HorizontalAlignment="Left" Width="201" ><InlineUIContainer>
+            TextWrapping="Wrap" HorizontalAlignment="Left" Width="201" Grid.Column="2" Grid.ColumnSpan="2" ><InlineUIContainer>
                 <Grid Height="100" Width="100"/>
             </InlineUIContainer></TextBlock>
         <Label
             x:Name="labelOutput"
             Width="57"
-            Margin="277,139,0,0"
+            Margin="259,139,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Output:"
-            RenderTransformOrigin="-0.263,0.269" Height="33" />
+            RenderTransformOrigin="-0.263,0.269" Height="33" Grid.Column="2" />
         <Button
             x:Name="buttonConnect"
             Width="75"
-            Margin="228,53,0,0"
+            Margin="210,53,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="ButtonConnect_Click"
-            Content="Connect" />
-        <Button x:Name="buttonBrowse" Content="Browse" HorizontalAlignment="Left" Margin="12,116,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" Click="btnOpenFile_Click"/>
-        <Grid x:Name="mazeGrid2" HorizontalAlignment="Left" Height="220" Margin="12,170,0,0" VerticalAlignment="Top" Width="260" MinWidth="40" MinHeight="40" ShowGridLines="True" Grid.IsSharedSizeScope="True" Panel.ZIndex="1">
+            Content="Connect" Grid.Column="2" />
+        <Button x:Name="buttonBrowse" Content="Browse" HorizontalAlignment="Left" Margin="9.8,116,0,0" VerticalAlignment="Top" Width="99" IsCancel="True" Click="btnOpenFile_Click" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Grid x:Name="mazeGrid2" HorizontalAlignment="Left" Height="220" Margin="9.8,170,0,0" VerticalAlignment="Top" Width="260" MinWidth="40" MinHeight="40" ShowGridLines="True" Grid.IsSharedSizeScope="True" Panel.ZIndex="1" Grid.ColumnSpan="2" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition ToolTip="A1" Width="65*"/>
                 <ColumnDefinition Width="65*"/>
@@ -100,7 +106,8 @@
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" x:Name="txt45" Grid.Row="4" Grid.Column="3" Width="65" Height="40" TextAlignment="Center" >D5</TextBlock>
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" x:Name="txt46" Grid.Row="5" Grid.Column="3" Width="65" Height="40" TextAlignment="Center" >D6</TextBlock>
         </Grid>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="220" Margin="12,170,0,0" VerticalAlignment="Top" Width="260"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="220" Margin="9.8,170,0,0" VerticalAlignment="Top" Width="260" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button x:Name="buttonSendData2" Content="Send Data" HorizontalAlignment="Left" Margin="98,139,0,0" VerticalAlignment="Top" Width="97" Height="22" Click="ButtonSendData2_Click" Grid.Column="2"/>
 
     </Grid>
 
