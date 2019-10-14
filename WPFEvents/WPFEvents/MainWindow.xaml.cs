@@ -5,6 +5,7 @@ using System.IO.Ports;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using Microsoft.Win32;
 
 namespace WPFEvents
@@ -17,13 +18,15 @@ namespace WPFEvents
         private bool isConnected;
         private string[] ports;
         private SerialPort port;
-        private string points;
+        public string points;
         private bool irCels = false;
 
         public MainWindow()
         {
             InitializeComponent();
             getAvailableComPorts();
+            string path = Directory.GetCurrentDirectory();
+           // imgPhoto.Source = new BitmapImage(new Uri("file://"+path+"//Compass.jpg"));
 
             foreach (var port in ports)
             {
@@ -153,9 +156,11 @@ namespace WPFEvents
                 irCels = true;
             }
             else
+            {
                 textBlockOutput.Text = "Ceļa nav";
 
-            irCels = false;
+                irCels = false;
+            }
 
             TextBlock[] labLauki =
             {
