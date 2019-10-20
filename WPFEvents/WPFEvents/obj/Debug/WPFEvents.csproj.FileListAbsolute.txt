@@ -74,3 +74,17 @@ C:\Users\Edgars Čiževskis\Source\Repos\WPFEvents5\WPFEvents\WPFEvents\obj\Debu
 C:\Users\Edgars Čiževskis\Source\Repos\WPFEvents5\WPFEvents\WPFEvents\obj\Debug\WPFEvents.csproj.CopyComplete
 C:\Users\Edgars Čiževskis\Source\Repos\WPFEvents5\WPFEvents\WPFEvents\obj\Debug\WPFEvents.exe
 C:\Users\Edgars Čiževskis\Source\Repos\WPFEvents5\WPFEvents\WPFEvents\obj\Debug\WPFEvents.pdb
+C:\Users\svies\Source\Repos\WPFEvents3\WPFEvents\WPFEvents\bin\Debug\WPFEvents.exe.config
+C:\Users\svies\Source\Repos\WPFEvents3\WPFEvents\WPFEvents\bin\Debug\WPFEvents.exe
+C:\Users\svies\Source\Repos\WPFEvents3\WPFEvents\WPFEvents\bin\Debug\WPFEvents.pdb
+C:\Users\svies\Source\Repos\WPFEvents3\WPFEvents\WPFEvents\obj\Debug\WPFEvents.csprojAssemblyReference.cache
+C:\Users\svies\Source\Repos\WPFEvents3\WPFEvents\WPFEvents\obj\Debug\MainWindow.g.cs
+C:\Users\svies\Source\Repos\WPFEvents3\WPFEvents\WPFEvents\obj\Debug\App.g.cs
+C:\Users\svies\Source\Repos\WPFEvents3\WPFEvents\WPFEvents\obj\Debug\WPFEvents_MarkupCompile.cache
+C:\Users\svies\Source\Repos\WPFEvents3\WPFEvents\WPFEvents\obj\Debug\WPFEvents_MarkupCompile.lref
+C:\Users\svies\Source\Repos\WPFEvents3\WPFEvents\WPFEvents\obj\Debug\MainWindow.baml
+C:\Users\svies\Source\Repos\WPFEvents3\WPFEvents\WPFEvents\obj\Debug\WPFEvents.g.resources
+C:\Users\svies\Source\Repos\WPFEvents3\WPFEvents\WPFEvents\obj\Debug\WPFEvents.Properties.Resources.resources
+C:\Users\svies\Source\Repos\WPFEvents3\WPFEvents\WPFEvents\obj\Debug\WPFEvents.csproj.GenerateResource.cache
+C:\Users\svies\Source\Repos\WPFEvents3\WPFEvents\WPFEvents\obj\Debug\WPFEvents.exe
+C:\Users\svies\Source\Repos\WPFEvents3\WPFEvents\WPFEvents\obj\Debug\WPFEvents.pdb

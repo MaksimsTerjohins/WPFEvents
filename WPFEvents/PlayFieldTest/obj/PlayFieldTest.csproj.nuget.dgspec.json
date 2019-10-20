@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\svies\\Source\\Repos\\Cirvis\\WPFEvents\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj": {}
+    "C:\\Users\\svies\\Source\\Repos\\WPFEvents3\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\svies\\Source\\Repos\\Cirvis\\WPFEvents\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj": {
+    "C:\\Users\\svies\\Source\\Repos\\WPFEvents3\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\svies\\Source\\Repos\\Cirvis\\WPFEvents\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj",
+        "projectUniqueName": "C:\\Users\\svies\\Source\\Repos\\WPFEvents3\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj",
         "projectName": "PlayFieldTest",
-        "projectPath": "C:\\Users\\svies\\Source\\Repos\\Cirvis\\WPFEvents\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj",
+        "projectPath": "C:\\Users\\svies\\Source\\Repos\\WPFEvents3\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj",
         "packagesPath": "C:\\Users\\svies\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\svies\\Source\\Repos\\Cirvis\\WPFEvents\\WPFEvents\\PlayFieldTest\\obj\\",
+        "outputPath": "C:\\Users\\svies\\Source\\Repos\\WPFEvents3\\WPFEvents\\PlayFieldTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\svies\\AppData\\Roaming\\NuGet\\NuGet.Config",

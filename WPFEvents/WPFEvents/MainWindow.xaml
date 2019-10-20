@@ -40,7 +40,7 @@
         <ComboBox
             x:Name="comboBox"
             Margin="210,10,0,0"
-            SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" Width="133" Height="22" VerticalAlignment="Top" Grid.Column="2" />
+            SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Left" Width="133" Height="22" VerticalAlignment="Top" Grid.Column="2" DropDownOpened="comboBox_DropDownOpened" />
         <TextBlock
             x:Name="textBlockOutput"
             Height="200"

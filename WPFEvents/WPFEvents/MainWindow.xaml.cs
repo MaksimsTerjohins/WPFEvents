@@ -26,7 +26,13 @@ namespace WPFEvents
             InitializeComponent();
             getAvailableComPorts();
             string path = Directory.GetCurrentDirectory();
-           // imgPhoto.Source = new BitmapImage(new Uri("file://"+path+"//Compass.jpg"));
+            string compassImage = "file://" + path + "//Compass.jpg";
+           
+            if (File.Exists(compassImage))
+            {
+                imgPhoto.Source = new BitmapImage(new Uri(compassImage));
+            }
+            
 
             foreach (var port in ports)
             {
@@ -164,12 +170,21 @@ namespace WPFEvents
 
             TextBlock[] labLauki =
             {
-                txt11, txt12, txt13, txt14, txt15, txt16, txt21, txt22, txt23, txt24, txt25, txt26, txt31, txt32,
-                txt33, txt34, txt35, txt36, txt41, txt42, txt43, txt44, txt45, txt46
+                txt11, txt12, txt13, txt14, txt15, txt16, txt21, txt22, txt23, txt24, txt25, txt26, 
+                txt31, txt32, txt33, txt34, txt35, txt36, txt41, txt42, txt43, txt44, txt45, txt46
             };
+            String[] laukuTeksts =
+            {
+                "A1", "A2", "A3", "A4", "A5", "A6", "B1", "B2", "B3", "B4", "B5", "B6", 
+                "C1", "C2", "C3", "C4", "C5", "C6", "D1", "D2", "D3", "D4", "D5", "D6"
 
+            };
+            int skaits = 0;
             foreach (var lauks in labLauki)
             {
+                lauks.Text = laukuTeksts[skaits];
+                lauks.Background = Brushes.White;
+                skaits++;
                 mapColour(x1 + 1, y1 + 1, x2 + 1, y2 + 1, sienas, points, lauks);
             }
         }
@@ -279,10 +294,16 @@ namespace WPFEvents
 
         private void ButtonSendData2_Click(object sender, RoutedEventArgs e)
         {
-            if (irCels)
+            if (irCels && isConnected)
             {
                 port.WriteLine(points);
             }
+        }
+
+        private void comboBox_DropDownOpened(object sender, EventArgs e)
+        {
+            var value = comboBox.SelectedItem as string;
+            getAvailableComPorts();
         }
     }
 }
