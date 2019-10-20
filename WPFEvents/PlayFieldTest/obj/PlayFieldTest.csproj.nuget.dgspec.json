@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Maksim\\source\\repos\\WPFEvents2\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj": {}
+    "C:\\Users\\svies\\Source\\Repos\\WPFEvents3\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Maksim\\source\\repos\\WPFEvents2\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj": {
+    "C:\\Users\\svies\\Source\\Repos\\WPFEvents3\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maksim\\source\\repos\\WPFEvents2\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj",
+        "projectUniqueName": "C:\\Users\\svies\\Source\\Repos\\WPFEvents3\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj",
         "projectName": "PlayFieldTest",
-        "projectPath": "C:\\Users\\Maksim\\source\\repos\\WPFEvents2\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj",
-        "packagesPath": "C:\\Users\\Maksim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maksim\\source\\repos\\WPFEvents2\\WPFEvents\\PlayFieldTest\\obj\\",
+        "projectPath": "C:\\Users\\svies\\Source\\Repos\\WPFEvents3\\WPFEvents\\PlayFieldTest\\PlayFieldTest.csproj",
+        "packagesPath": "C:\\Users\\svies\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\svies\\Source\\Repos\\WPFEvents3\\WPFEvents\\PlayFieldTest\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Maksim\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\svies\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
